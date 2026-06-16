@@ -137,7 +137,7 @@ function calcularPlan() {
         if (planElegido.link && planElegido.link !== "" && planElegido.link !== "#") {
             htmlResultado += `
                 <div class="caja-btn-abajo">
-                    <a href="${planElegido.link}" target="_blank" class="btn-opciones">Options</a>
+                    <a href="${planElegido.link}" target="_blank" class="btn-opciones">OPCIONES</a>
                 </div>
             `;
         }
