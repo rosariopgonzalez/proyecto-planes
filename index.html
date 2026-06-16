@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <title>que hacemos hoy?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;900&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <div id="particles-js"></div> 
+
+    <div class="contenedor-principal">
+        
+        <div id="pantalla-inicio" class="pantalla">
+            <h1 class="titulo-glitch">QUE HACEMOS HOY?</h1> 
+             <div class="animacion-arcade"></div> 
+            <button class="btn-neon btn-grande" onclick="iniciar()">AVERIGUAR</button>
+        </div>
+
+        <div id="pantalla-preguntas" class="pantalla oculto">
+            <div class="caja-modal">
+                <span id="indicador-nivel"></span>
+                <h2 id="texto-pregunta" class="texto-cyber"></h2>
+                <div class="grupo-botones">
+                    <button id="btn-opcion1" class="btn-neon"></button>
+                    <button id="btn-opcion3" class="btn-neon oculto"></button>
+                    <button id="btn-opcion2" class="btn-neon"></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="pantalla-cargando" class="pantalla oculto">
+            <h2 class="parpadeo texto-cyber"> ESPERA, POR FAVOR... </h2>
+            <div class="barra-carga"><div class="progreso"></div></div>
+        </div>
+
+        <div id="pantalla-resultado" class="pantalla oculto">
+            <div class="caja-modal" id="contenido-resultado"></div>
+            <button onclick="reboot()" class="btn-reboot mt-20">[ REINICIAR SISTEMA ]</button>
+        </div>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

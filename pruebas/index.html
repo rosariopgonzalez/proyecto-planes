@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>⚡ PROJECT DATES ⚡</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="pantalla-landing" class="pantalla">
+        <div class="animacion-arcade">
+            <div class="pacman"></div>
+            <div class="punto"></div>
+            <div class="punto"></div>
+            <div class="punto"></div>
+        </div>
+        
+        <h1 class="titulo-glitch">CYBER_PLAN_OS</h1>
+        <p class="subtitulo">Sistema de asignación de aniversario v1.0</p>
+        <button onclick="iniciarSistema()" class="btn-neon btn-grande">READY?</button>
+    </div>
+
+    <div id="pantalla-preguntas" class="pantalla oculto">
+        <div class="caja-modal">
+            <p id="indicador-nivel" class="texto-cyber">NIVEL 1/4</p>
+            <h2 id="texto-pregunta">Cargando...</h2>
+            <div class="contenedor-botones">
+                <button id="btn-opcion1" class="btn-neon"></button>
+                <button id="btn-opcion2" class="btn-neon"></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pantalla-cargando" class="pantalla oculto">
+        <h2 class="parpadeo texto-cyber">>>> GENERANDO PLAN...</h2>
+        <div class="barra-carga">
+            <div class="progreso"></div>
+        </div>
+    </div>
+
+    <div id="pantalla-resultado" class="pantalla oculto">
+        <div class="caja-modal" id="contenido-resultado">
+            </div>
+        <button onclick="reiniciarSistema()" class="btn-reboot mt-20">[ REBOOT SYSTEM ]</button>
+    </div>
+  
+    <div id="particles-js"></div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

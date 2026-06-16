@@ -1,0 +1,356 @@
+:root {
+    /* Paleta oscura profunda */
+    --bg-centro: #160a21;
+    --bg-borde: #05020a;
+    
+    /* Colores Neón */
+    --neon-violeta: #b026ff;
+    --neon-rojo: #ff003c;
+    --texto-claro: #f0e6ff;
+}
+
+body {
+    background-color: #050505;
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    color: white;
+    touch-action: manipulation;
+}
+
+/* --- ESTRUCTURA Y PANTALLAS --- */
+.pantalla {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100dvh;
+    text-align: center;
+    animation: aparecer 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.oculto { display: none !important; }
+
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+#particles-js {
+    position: fixed; 
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* --- TÍTULOS Y TEXTOS --- */
+.titulo-glitch {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 2px 2px #ff003c, -2px -2px #00f3ff;
+    letter-spacing: 5px;
+    animation: glitch 1s infinite;
+}
+
+#indicador-nivel {
+    display: block;             
+    font-size: 0.9rem;           
+    color: #a0a0a0;              
+    margin-bottom: 10px;         
+    letter-spacing: 3px;         
+    font-weight: 300;            
+    text-transform: uppercase;   
+    opacity: 0.8;                
+}
+
+#texto-pregunta {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: #f0e6ff;
+    text-transform: uppercase; 
+    letter-spacing: 2px;      
+    
+    text-align: center; 
+    
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.3);
+}
+
+#pantalla-resultado {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    min-height: 100vh; 
+    width: 100%;
+    margin: 0;
+    height: auto;       
+    padding: 45px 25px; 
+    gap: 20px;
+}
+
+.pantalla-resultado h2 { 
+    margin: 0; 
+    padding: 0;
+    text-align: center;
+}
+
+#contenido-resultado .label-subtitulo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.7rem;
+    color: #00f3ff;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+#contenido-resultado .titulo-resultado {
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin: 0;
+    text-align: center;
+}
+
+/* --- GLASSMORPHISM CAJAS --- */
+.caja-modal {
+    background: rgba(10, 10, 20, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    padding: 40px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 0 25px rgba(176, 38, 255, 0.4);
+    margin: auto; 
+    box-sizing: border-box;
+}
+
+/* --- BOTONES --- */
+.btn-neon {
+    background: transparent;
+    border: 1px solid #b026ff;
+    color: #b026ff;
+    padding: 15px 30px;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.btn-neon:hover {
+    box-shadow: 0 0 20px #b026ff, 0 0 40px #b026ff; 
+    text-shadow: 0 0 5px #fff;
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn-reboot {
+    margin-top: 60px; 
+    border: 1px solid #ff003c;
+    color: #ff003c;
+    background: transparent;
+    padding: 15px 30px;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border-radius: 8px;
+}
+
+/* --- BARRA DE CARGA --- */
+.barra-carga {
+    width: 100%;
+    max-width: 400px;
+    height: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--neon-violeta);
+    border-radius: 10px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.progreso {
+    height: 100%;
+    background-color: var(--neon-rojo);
+    width: 0%;
+    box-shadow: 0 0 15px var(--neon-rojo);
+    animation: cargar 3s forwards cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes cargar {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+/* ---   ESTÉTICA "MISSION PASSED" / ALERTA NASA   --- */
+
+#contenido-resultado.mision-exito {
+    border-color: #00ffaa !important;
+    box-shadow: 0 0 30px rgba(0, 255, 170, 0.4), inset 0 0 15px rgba(0, 255, 170, 0.1) !important;
+}
+
+#contenido-resultado.mision-error {
+    border-color: #ff003c !important;
+    box-shadow: 0 0 30px rgba(255, 0, 60, 0.4), inset 0 0 15px rgba(255, 0, 60, 0.1) !important;
+}
+
+#contenido-resultado {
+    max-width: 600px !important; 
+    padding: 40px  !important; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto; 
+}
+
+.alerta-sistema {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    animation: parpadeo-alerta 1.5s infinite alternate;
+}
+.alerta-sistema.verde { color: #00ffaa; text-shadow: 0 0 8px #00ffaa; }
+.alerta-sistema.rojo { color: #ff003c; text-shadow: 0 0 8px #ff003c; }
+
+@keyframes parpadeo-alerta {
+    0% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+/* --- ACHICAR EL TÍTULO --- */
+.titulo-glitch.titulo-chico {
+    font-size: 1.5rem !important; 
+    margin: 10px 0 30px 0 !important;
+    line-height: 1.3;
+}
+
+.caja-btn-abajo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-opciones {
+    background: transparent;
+    border: 1px solid #00ffaa;
+    color: #00ffaa;
+    padding: 12px 30px; 
+    font-family: 'Orbitron', sans-serif; 
+    text-transform: uppercase;
+    text-decoration: none; 
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: inline-block; 
+    border-radius: 8px;
+}
+
+/* Esto aplica solo a pantallas de menos de 600px (celulares) */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px; 
+        padding: 10px;
+    }
+
+    .contenedor {
+        width: 100%;
+        margin: 0;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .caja-modal {
+        width: 90%;           
+        max-width: 500px;     
+        margin: 20px auto;    
+        padding: 20px;        
+        box-sizing: border-box;
+    }
+    .barra-carga {
+        width: 90%;
+        max-width: 500px;
+    }
+    .progreso {
+        width: 90%;
+        max-width: 500px;
+    }
+    .btn-neon {
+        width: 70%;
+        max-width: 350px;
+
+    }
+    .btn-reboot {
+        width: 70%;
+        max-width: 350px;
+    }
+    .alerta-sistema {
+        width: 70%;
+        max-width: 350px;
+    }
+    h1 {
+        font-size: 2.2rem !important; 
+    }
+    #contenido-resultado {
+        width: 90% !important;
+        padding: 20px !important;
+    }
+    #contenido-resultado h2 {
+        font-size: 1.4rem !important;
+    }
+}
+
+/* --- EFECTOS HOVER ( para PC) --- */
+@media (hover: hover) and (pointer: fine) {
+    .btn-neon:hover {
+        box-shadow: 0 0 20px #b026ff, 0 0 40px #b026ff;
+        text-shadow: 0 0 5px #fff;
+        border-color: #fff;
+        color: #fff;
+    }
+
+    .btn-reboot:hover {
+        box-shadow: 0 0 20px #ff003c, 0 0 40px #ff003c;
+        color: #fff;
+        border-color: #fff;
+    }
+
+    .btn-opciones:hover {
+        box-shadow: 0 0 15px #00ffaa, 0 0 30px #00ffaa;
+        text-shadow: 0 0 5px #fff;
+        border-color: #fff;
+        color: #fff;
+        background: rgba(0, 255, 170, 0.1);
+    }
+}
+
+/* --- EFECTOS DE TOQUE (para celulares) --- */
+.btn-neon:active {
+    box-shadow: 0 0 15px #b026ff;
+    background: rgba(176, 38, 255, 0.2);
+}
+
+.btn-reboot:active {
+    box-shadow: 0 0 15px #ff003c;
+    background: rgba(255, 0, 60, 0.2);
+}
+
+.btn-opciones:active {
+    box-shadow: 0 0 15px #00ffaa;
+    background: rgba(0, 255, 170, 0.2);
+}
