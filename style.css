@@ -362,14 +362,17 @@ body {
 .btn-neon:active {
     box-shadow: 0 0 15px #b026ff;
     background: rgba(176, 38, 255, 0.2);
+    transition: none !important;
 }
 
 .btn-reboot:active {
     box-shadow: 0 0 15px #ff003c;
     background: rgba(255, 0, 60, 0.2);
+    transition: none !important;
 }
 
 .btn-opciones:active {
     box-shadow: 0 0 15px #00ffaa;
     background: rgba(0, 255, 170, 0.2);
+    transition: none !important;
 }
